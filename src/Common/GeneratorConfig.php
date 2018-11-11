@@ -441,6 +441,10 @@ class GeneratorConfig
 
     public function getAddOn($addOn)
     {
+        //FIXME hardcoded to make it work, otherwise it defaults to false no matter how you try and configure it
+        if($addOn === 'datatables'){
+            return true;
+        }
         if (isset($this->addOns[$addOn])) {
             return $this->addOns[$addOn];
         }
